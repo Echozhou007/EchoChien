@@ -1,11 +1,11 @@
 # EchoChien
 ### 1. React的事件绑定
-    <button onClick={() => this.handleClick()}>Click me</button> /* handleClick（） {....} */
+    `<button onClick={() => this.handleClick()}>Click me</button>` /* handleClick（） {....} */
     每次渲染组件时都会创建不同的回调函数，大多数情况是没有问题，但如果该回调函数作为 prop 传入子组件时，这些组件可能会进行额外的重新渲染
     所以比较好的写法：
     在constructor中绑定this； 
-    <button onClick={this.handleClick}>Click me</button> /* handleClick= （） => {....}* /;
-    <button onClick={this.handleClick.bind(this)}>Click me</button> /* handleClick（） {....} */
+    `<button onClick={this.handleClick}>Click me</button> `/* handleClick= （） => {....}* /;
+    `<button onClick={this.handleClick.bind(this)}>Click me</button>` /* handleClick（） {....} */
 ### 2.React向事件处理程序传递参数
     <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
     <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
