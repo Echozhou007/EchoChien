@@ -1,7 +1,7 @@
 # EchoChien
 1. React的事件绑定
     <button onClick={() => this.handleClick()}>Click me</button> /* handleClick（） {....} */
-    每次渲染组件时都会创建不同的回调函数，大多数情况是没有问题爹，但如果该回调函数作为 prop 传入子组件时，这些组件可能会进行额外的重新渲染
+    每次渲染组件时都会创建不同的回调函数，大多数情况是没有问题，但如果该回调函数作为 prop 传入子组件时，这些组件可能会进行额外的重新渲染
     所以比较好的写法：
     在constructor中绑定this； 
     <button onClick={this.handleClick}>Click me</button> /* handleClick= （） => {....}* /;
@@ -19,20 +19,16 @@
           isGoing: true,
           numberOfGuests: 2
         };
-
         this.handleInputChange = this.handleInputChange.bind(this);
       }
-
       handleInputChange(event) {
         const target = event.target;
         const value = target.name === 'isGoing' ? target.checked : target.value;
         const name = target.name;
-
         this.setState({
           [name]: value
         });
       }
-
       render() {
         return (
           <form>
