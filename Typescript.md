@@ -11,3 +11,22 @@
     let mySearch: SearchFunc = function(source: string, subString: string) {
         return source.search(subString) !== -1;
     }
+### 2.泛型与keyof的结合使用
+    interface Person {
+        name:string,
+        age:number,
+        isMale: boolean
+    }
+    class Teacher {
+        constructor(private info: Person){}
+        getDetailInfo<T extends keyof Person>(key:T):Person[T]{
+            return this.info[key]
+        }
+    }
+    const teacher = new Teacher({
+        name: 'zhangsan',
+        age: 35,
+        isMale: true
+    })
+    const info = teacher.getDetailInfo('name')  // 只能是name,age,isMale
+    console.log(info)
