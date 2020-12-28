@@ -30,3 +30,13 @@
     })
     const info = teacher.getDetailInfo('name')  // 只能是name,age,isMale
     console.log(info)
+### 2.express中对变量类型描述不准确？自定义中间件类型无法扩展？
+    1.解决：通过自定义interface扩展原先的变量类型
+    2.解决：根据express的定义typescript描述文件的方式，扩展原先的d.ts文件，
+        如：declare namespace {
+            interface Request {
+                body {
+                    helloName: string 
+                }
+            }
+        }
