@@ -1,5 +1,5 @@
 ### Typescript
-
+    类型断言的两种方式： （<string>str).length  或者 (str as string).
 ### 1.函数声明与函数表达式
     函数声明：   function sum(x: number, y: number): number { return x + y; }
     函数表达式： let mySum: (x: number, y: number) => number = function (x: number, y: number): number { return x + y; }
@@ -11,7 +11,9 @@
     let mySearch: SearchFunc = function(source: string, subString: string) {
         return source.search(subString) !== -1;
     }
-### 2.泛型与keyof的结合使用
+### 2.类型断言
+
+### 3.泛型与keyof的结合使用
     interface Person {
         name:string,
         age:number,
@@ -30,7 +32,7 @@
     })
     const info = teacher.getDetailInfo('name')  // 只能是name,age,isMale
     console.log(info)
-### 2.express中对变量类型描述不准确？自定义中间件类型无法扩展？
+### 4.express中对变量类型描述不准确？自定义中间件类型无法扩展？
     1.解决：通过自定义interface扩展原先的变量类型
     2.解决：根据express的定义typescript描述文件的方式，扩展原先的d.ts文件，
         如：declare namespace {
