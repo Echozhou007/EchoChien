@@ -1,5 +1,5 @@
 ### Typescript
-    类型断言的两种方式： （<string>str).length  或者 (str as string).
+  
 ### 1.函数声明与函数表达式
     函数声明：   function sum(x: number, y: number): number { return x + y; }
     函数表达式： let mySum: (x: number, y: number) => number = function (x: number, y: number): number { return x + y; }
@@ -12,7 +12,7 @@
         return source.search(subString) !== -1;
     }
 ### 2.类型断言
-
+    类型断言的两种方式： （<string>str).length  或者 (str as string).length
 ### 3.泛型与keyof的结合使用
     interface Person {
         name:string,
